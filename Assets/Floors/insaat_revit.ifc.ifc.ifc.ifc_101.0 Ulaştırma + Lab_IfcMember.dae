@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1">
+  <asset>
+    <contributor>
+      <authoring_tool>Tridify Collada Exporter 1.0</authoring_tool>
+    </contributor>
+    <created>2020-04-15T12:53:18</created>
+    <modified>2020-04-15T12:53:18</modified>
+    <unit name="METER" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_effects>
+    <effect id="IfcMember-fx">
+      <profile_COMMON>
+        <technique sid="common">
+          <lambert>
+            <diffuse>
+              <color>0.65 0.6 0.6 1.0</color>
+            </diffuse>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_materials>
+    <material id="IfcMember">
+      <instance_effect url="#IfcMember-fx"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="representation-377839">
+      <mesh>
+        <source id="representation-377839-positions">
+          <float_array id="representation-377839-positions-array" count="90">137.577 62.6319 0.212634 137.627 62.6319 0.212634 137.577 60.4319 1.54597 137.627 60.4319 1.54597 137.577 60.4319 1.54597 137.627 60.4319 1.54597 137.577 60.4319 1.07824 137.627 60.4319 1.07824 137.577 60.4319 1.07824 137.627 60.4319 1.07824 137.577 62.211 -5.55112e-16 137.627 62.211 -5.55112e-16 137.577 62.211 -5.55112e-16 137.627 62.211 -5.55112e-16 137.577 62.6319 -3.33067e-16 137.627 62.6319 -3.33067e-16 137.577 62.6319 -3.33067e-16 137.627 62.6319 -3.33067e-16 137.577 62.6319 0.212634 137.627 62.6319 0.212634 137.577 62.6319 0.212634 137.577 60.4319 1.54597 137.577 60.4319 1.07824 137.577 62.211 -5.55112e-16 137.577 62.6319 -3.33067e-16 137.627 62.6319 0.212634 137.627 60.4319 1.54597 137.627 60.4319 1.07824 137.627 62.211 -5.55112e-16 137.627 62.6319 -3.33067e-16</float_array>
+          <technique_common>
+            <accessor source="#representation-377839-positions-array" count="30" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="representation-377839-normals">
+          <float_array id="representation-377839-normals-array" count="90">0.0 0.518296 0.85519 0.0 0.518296 0.85519 0.0 0.518296 0.85519 0.0 0.518296 0.85519 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -0.518296 -0.85519 0.0 -0.518296 -0.85519 0.0 -0.518296 -0.85519 0.0 -0.518296 -0.85519 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 -1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0 1.0 0.0 0.0</float_array>
+          <technique_common>
+            <accessor source="#representation-377839-normals-array" count="30" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="representation-377839-texcoord-0">
+          <float_array id="representation-377839-texcoord-0-array" count="60">137.577 62.6319 137.627 62.6319 137.577 60.4319 137.627 60.4319 137.577 1.54597 137.627 1.54597 137.577 1.07824 137.627 1.07824 -137.577 60.4319 -137.627 60.4319 -137.577 62.211 -137.627 62.211 -137.577 62.211 -137.627 62.211 -137.577 62.6319 -137.627 62.6319 -137.577 -3.33067e-16 -137.627 -3.33067e-16 -137.577 0.212634 -137.627 0.212634 -62.6319 0.212634 -60.4319 1.54597 -60.4319 1.07824 -62.211 -5.55112e-16 -62.6319 -3.33067e-16 62.6319 0.212634 60.4319 1.54597 60.4319 1.07824 62.211 -5.55112e-16 62.6319 -3.33067e-16</float_array>
+          <technique_common>
+            <accessor source="#representation-377839-texcoord-0-array" count="30" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="representation-377839-texcoord-1">
+          <float_array id="representation-377839-texcoord-1-array" count="60">0.850034 0.497008 0.900023 0.497008 0.850034 0.0 0.900023 0.0 0.950011 0.0 0.900023 0.0 0.950011 0.174349 0.900023 0.174349 0.850034 0.0 0.800015 0.0 0.850034 0.746857 0.800015 0.746857 0.950042 0.174349 0.900023 0.174349 0.950042 0.32546 0.900023 0.32546 0.950011 0.0792611 1.0 0.0792611 0.950011 0.0 1.0 0.0 0.800015 0.958918 0.800011 0.0 0.400008 0.0903651 0.400008 0.86582 0.61817 0.999999 0.400008 0.0410802 0.400008 1.0 3.81476e-06 0.909635 0.0 0.134178 0.218162 0.0</float_array>
+          <technique_common>
+            <accessor source="#representation-377839-texcoord-1-array" count="30" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="representation-377839-vertices">
+          <input semantic="POSITION" source="#representation-377839-positions"/>
+        </vertices>
+        <triangles material="IfcMember" count="16">
+          <input semantic="VERTEX" source="#representation-377839-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#representation-377839-normals" offset="0"/>
+          <input semantic="TEXCOORD" source="#representation-377839-texcoord-0" offset="0" set="0"/>
+          <input semantic="TEXCOORD" source="#representation-377839-texcoord-1" offset="0" set="1"/>
+          <p>1 0 2 3 1 2 5 4 6 7 5 6 9 8 10 11 9 10 13 12 14 15 13 14 17 16 18 19 17 18 20 24 23 20 23 21 21 23 22 28 29 25 26 28 25 27 28 26 </p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="TridifyScene">
+      <node id="2WQLiQDwb5AAivtwS3jTK0" name="2WQLiQDwb5AAivtwS3jTK0" type="NODE">
+        <matrix sid="transform">1.0 0.0 0.0 0.0 0.0 1.0 0.0 0.0 0.0 0.0 1.0 9.5 0.0 0.0 0.0 1.0</matrix>
+        <instance_geometry url="#representation-377839">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="IfcMember" target="#IfcMember"/>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#TridifyScene"/>
+  </scene>
+</COLLADA>
