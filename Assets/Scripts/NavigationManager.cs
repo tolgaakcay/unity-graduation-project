@@ -21,7 +21,7 @@ public class NavigationManager : MonoBehaviour
     public int counter = 0;
     public float total_distance_1 = 0.0f;
     public float total_distance_2 = 0.0f;
-    public string fileLocation = @"D:\coord_time.csv";
+    public string fileLocation = @".\coord_time.csv";
     public string total_agent;
     public Animator anim;
     private NavMeshAgent agent;
@@ -45,7 +45,7 @@ public class NavigationManager : MonoBehaviour
         startPosition = gameObject.transform.position;
         GameObject[] gameObjects;
         gameObjects = GameObject.FindGameObjectsWithTag("Agent");
-        finalcounter.text = ("Kalan aktör sayısı:" + gameObjects.Length.ToString()+"/"+ gameObjects.Length.ToString());
+        finalcounter.text = ("Kalan aktor sayisi:" + gameObjects.Length.ToString()+"/"+ gameObjects.Length.ToString());
         total_agent = gameObjects.Length.ToString();
     
     }
@@ -60,7 +60,7 @@ public class NavigationManager : MonoBehaviour
                     transform.gameObject.tag = "final";
                     GameObject[] gameObjects;
                     gameObjects = GameObject.FindGameObjectsWithTag("Agent");
-                    finalcounter.text = ("Kalan aktör sayısı:"+gameObjects.Length.ToString()+"/"+total_agent);
+                    finalcounter.text = ("Kalan aktor sayisi:"+gameObjects.Length.ToString()+"/"+total_agent);
                     endTime = Time.time;
                     WriteSimulationData();
                 }
@@ -76,7 +76,7 @@ public class NavigationManager : MonoBehaviour
         {
             random_destination_1 = new Vector3(UnityEngine.Random.Range(220.0f, 228.0f), 5, UnityEngine.Random.Range(112.0f, 125.0f));
             random_destination_2 = new Vector3(UnityEngine.Random.Range(109.5f, 97.0f), 1, UnityEngine.Random.Range(60.0f, 52.0f));
-            NavMesh.CalculatePath(transform.position, random_destination_1, NavMesh.AllAreas, path);
+            
             for (int i = 0; i < path.corners.Length - 1; i++)
                 total_distance_1 += (path.corners[i] - path.corners[i + 1]).magnitude;
 
