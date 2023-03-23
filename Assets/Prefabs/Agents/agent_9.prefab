@@ -547,7 +547,7 @@ MonoBehaviour:
   counter: 0
   total_distance_1: 0
   total_distance_2: 0
-  fileLocation: D:\coord_time.csv
+  fileLocation: ./coord_time.csv
   total_agent: 
   anim: {fileID: 0}
   finalcounter: {fileID: 0}
