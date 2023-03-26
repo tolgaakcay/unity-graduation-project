@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7527398207892880158}
   - component: {fileID: 7527398207892767422}
   - component: {fileID: 7527398208578501374}
+  - component: {fileID: 513657116111547853}
   m_Layer: 0
   m_Name: Fire
   m_TagString: fire
@@ -4730,3 +4731,16 @@ NavMeshObstacle:
   m_CarveOnlyStationary: 1
   m_Center: {x: 0, y: 0, z: 0}
   m_TimeToStationary: 0.5
+--- !u!65 &513657116111547853
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7527398207910994558}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 34.724155, y: 10, z: 11.121996}
+  m_Center: {x: -12.350234, y: 0, z: -3.667486}
