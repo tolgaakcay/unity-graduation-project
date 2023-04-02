@@ -10,6 +10,9 @@ TagManager:
   - Agent
   - final
   - fire
+  - firefighter
+  - extinguisher
+  - SimulationManager
   layers:
   - Default
   - TransparentFX
@@ -20,8 +23,8 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - 
-  - 
+  - Firefighter
+  - Extinguisher
   - 
   - 
   - 
