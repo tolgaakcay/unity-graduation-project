@@ -31,6 +31,8 @@ public class NavigationManager : MonoBehaviour
     public float distanceThreshold = 4.0f;
     public SimulationManager simManager;
 
+    public bool isEvacuated = false;
+
     public void WriteSimulationData()    
     {
         StreamWriter sw = new StreamWriter(fileLocation, true);
@@ -103,10 +105,19 @@ public class NavigationManager : MonoBehaviour
             startTime = Time.time;
         }
 
-        if (agent.remainingDistance != 0 && agent.remainingDistance < 3)
+        if (agent.remainingDistance != 0 && agent.remainingDistance < 3 && isEvacuated)
         {
             anim.SetTrigger("isStatic");
+            agent.speed = 0;
+            
         }
+    }
 
+    void OnTriggerEnter (Collider col)
+    {
+        if (col.gameObject.tag == "SafeArea")
+        {
+            isEvacuated = true;
+        }
     }
 }

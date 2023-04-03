@@ -81,6 +81,11 @@ public class FirefighterManager : MonoBehaviour
             agent.SetDestination(transform.position);
             StartCoroutine(Extinguish(_fireObj));
         }
+        if (other.gameObject.tag == "evacuation")
+        {
+            anim.SetTrigger("isStatic");
+            this.gameObject.tag = "final";
+        }
     }
 
     IEnumerator Stop(GameObject obj)
@@ -99,6 +104,7 @@ public class FirefighterManager : MonoBehaviour
         if (obj.TryGetComponent(out ObjectGrabbable grabbable))
         {
             Debug.Log(this.name + " grabbed " + obj.name);
+            grabbable.DisableCollider();
             grabbable.Grab(_objGrabPosTransform);
         }
     }
@@ -124,8 +130,10 @@ public class FirefighterManager : MonoBehaviour
         state = FirefighterState.GoingToFire;
         _fireObj = FindNearestGameObject(fires);
         // anim.SetTrigger("goingToExtinguish");
-        agent.SetDestination(_fireObj.transform.position);
-        Debug.DrawLine(transform.position, _fireObj.transform.position, Color.red, 5f);
+        if (_fireObj != null)
+            agent.SetDestination(_fireObj.transform.position);
+            Debug.DrawLine(new Vector3(transform.position.x, 1f, transform.position.z), 
+                           new Vector3(_fireObj.transform.position.x, 1f, _fireObj.transform.position.z), Color.red, 5f);
         
 
 
