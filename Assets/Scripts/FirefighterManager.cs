@@ -13,6 +13,7 @@ public class FirefighterManager : MonoBehaviour
     public Animator anim;
     public NavMeshAgent agent;
     public SimulationManager simManager;
+    [SerializeField] private ParticleSystem _fireExtinguisherParticles;
     
     [SerializeField] private Transform _objGrabPosTransform;
 
@@ -42,6 +43,7 @@ public class FirefighterManager : MonoBehaviour
         anim = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         simManager = GameObject.FindWithTag("SimulationManager").GetComponent<SimulationManager>();
+        _fireExtinguisherParticles = GetComponentInChildren<ParticleSystem>();
     }
 
     void Update()
@@ -60,7 +62,7 @@ public class FirefighterManager : MonoBehaviour
             }
 
         }
-        if (agent.velocity!=new Vector3(0,0,0))
+        if (agent.velocity!=new Vector3(0,0,0) && agent.remainingDistance>0.1f)
         {
             anim.SetTrigger("isRunning");
         }
@@ -70,6 +72,7 @@ public class FirefighterManager : MonoBehaviour
     {
         if (other.gameObject.tag == "extinguisher")
         {
+            anim.SetTrigger("isStatic");
             StartCoroutine(Stop(other.gameObject));
         }
         if (other.gameObject.tag == "fire")
@@ -82,12 +85,12 @@ public class FirefighterManager : MonoBehaviour
 
     IEnumerator Stop(GameObject obj)
     {
-        anim.SetTrigger("isStatic");
         // Debug.Log("Waiting for 5 seconds");
         // Debug.Log(Time.time);
         yield return new WaitForSeconds(5);
         // Debug.Log(Time.time);
         GrabExtinguisher(obj);
+        yield return new WaitForSeconds(1);
         GoToExtinguish();
     }
 
@@ -107,6 +110,7 @@ public class FirefighterManager : MonoBehaviour
         NavMesh.CalculatePath(transform.position, _extinguisherPos, UnityEngine.AI.NavMesh.AllAreas, _path);
         state = FirefighterState.GoingToExtinguisher;
         agent.SetDestination(_extinguisherPos);
+        anim.SetTrigger("isRunning");
 
         // if (agent.remainingDistance != 0 && agent.remainingDistance < 3)
         // {
@@ -143,6 +147,7 @@ public class FirefighterManager : MonoBehaviour
     {
         state = FirefighterState.Extinguish;
         // anim.SetTrigger("extinguish");
+        _fireExtinguisherParticles.Play();
         
         int index = Array.IndexOf(fires, fire);
         if (index != -1)
@@ -153,6 +158,7 @@ public class FirefighterManager : MonoBehaviour
             fires = newFires;
             yield return new WaitForSeconds(5);
             Destroy(fire);
+            _fireExtinguisherParticles.Stop();
         }
 
         if (fires.Length == 0)
@@ -165,9 +171,8 @@ public class FirefighterManager : MonoBehaviour
         {
             GoToExtinguish();
         }
-
-        
     }
+
 
     void Evacuate()
     {
