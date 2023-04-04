@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -109,7 +109,6 @@ public class NavigationManager : MonoBehaviour
         {
             anim.SetTrigger("isStatic");
             agent.speed = 0;
-            
         }
     }
 

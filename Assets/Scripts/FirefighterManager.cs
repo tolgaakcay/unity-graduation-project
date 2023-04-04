@@ -72,6 +72,7 @@ public class FirefighterManager : MonoBehaviour
     {
         if (other.gameObject.tag == "extinguisher")
         {
+            Debug.Log("EXTINGUISHERRRRRR");
             anim.SetTrigger("isStatic");
             StartCoroutine(Stop(other.gameObject));
         }
