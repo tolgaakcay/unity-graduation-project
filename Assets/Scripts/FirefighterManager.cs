@@ -3,9 +3,23 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using System;
+using System.Text;
+using UnityEngine.UI;
+using System.IO;
+
+
 
 public class FirefighterManager : MonoBehaviour
 {
+    public Vector3 startPosition;
+    public float startTime;
+    public float endTime;
+    public int counter = 0;
+    public string total_agent;
+    public Text finalcounter;
+    public Text textBox;
+    public string fileLocation = @".\coord_time.csv";
+ 
     public GameObject[] extinguishers;
     public GameObject[] fires;
     public Vector3 _firePosition;
@@ -23,6 +37,15 @@ public class FirefighterManager : MonoBehaviour
 
     private GameObject _fireObj;
     GrabPoint extinguisherChild;
+
+        public void WriteSimulationData()    
+    {
+        StreamWriter sw = new StreamWriter(fileLocation, true);
+        string data = (startPosition.x * 1000).ToString("F0") + "," + (startPosition.z * 1000).ToString("F0") + "," + (startPosition.y * 1000).ToString("F0") + "," + Math.Round((endTime-startTime)).ToString();
+        sw.WriteLine(data);
+        sw.Flush();
+        sw.Close();       
+    }
 
     public enum FirefighterState
     {
@@ -48,6 +71,22 @@ public class FirefighterManager : MonoBehaviour
 
     void Update()
     {
+        if (transform.position[0] >= 114.0 & transform.position[0] <= 114.5 || transform.position[0] >= 217.0 & transform.position[0] <= 217.5)
+        {
+            
+            if (gameObject.tag == "Agent")
+            {
+                {
+                    transform.gameObject.tag = "final";
+                    GameObject[] gameObjects;
+                    gameObjects = GameObject.FindGameObjectsWithTag("Agent");
+                    finalcounter.text = ("Kalan aktor sayisi:"+gameObjects.Length.ToString()+"/"+total_agent);
+                    endTime = Time.time;
+                    WriteSimulationData();
+                }
+            }
+        }
+
         if (simManager.isSimStarted)
         {
             if (fires.Length > 0)
@@ -75,6 +114,7 @@ public class FirefighterManager : MonoBehaviour
             Debug.Log("EXTINGUISHERRRRRR");
             anim.SetTrigger("isStatic");
             StartCoroutine(Stop(other.gameObject));
+            other.gameObject.tag = "grabbed";
         }
         if (other.gameObject.tag == "fire")
         {

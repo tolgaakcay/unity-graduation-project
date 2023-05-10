@@ -14,6 +14,11 @@ TagManager:
   - extinguisher
   - SimulationManager
   - SafeArea
+  - patrol
+  - test
+  - grabbed
+  - Child
+  - LifeSaver
   layers:
   - Default
   - TransparentFX
