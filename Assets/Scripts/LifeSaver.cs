@@ -118,15 +118,12 @@ public class LifeSaver : MonoBehaviour
 
             
             counter3++;
-            UnityEngine.Debug.Log("testananısikiyimmmmmm");     
             // simManager.isSimStarted = true;
             random_destination_1 = new Vector3(UnityEngine.Random.Range(220.0f, 228.0f), 5, UnityEngine.Random.Range(112.0f, 125.0f));
             random_destination_2 = new Vector3(UnityEngine.Random.Range(109.5f, 97.0f), 1, UnityEngine.Random.Range(60.0f, 52.0f));
-            UnityEngine.Debug.Log("testananısikiyimmmmmm");     
             // Add new variables to store the distances between the agent and each destination
             float distance_to_destination_1 = Vector3.Distance(random_destination_1, transform.position);
             float distance_to_destination_2 = Vector3.Distance(random_destination_2, transform.position);
-            UnityEngine.Debug.Log("testananısikiyimmmmmm");
             // If the agent is closer to destination 1, set the final destination to destination 2
             if (distance_to_destination_1 < distance_to_destination_2)
             {
@@ -138,7 +135,6 @@ public class LifeSaver : MonoBehaviour
                 random_destination_final = random_destination_2;
                 NavMesh.CalculatePath(transform.position, random_destination_1, NavMesh.AllAreas, _path);
             }
-            UnityEngine.Debug.Log("testananısikiyimmmmmm");
 
             agent.SetDestination(random_destination_final);
             startTime = Time.time;

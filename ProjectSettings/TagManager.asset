@@ -19,6 +19,8 @@ TagManager:
   - grabbed
   - Child
   - LifeSaver
+  - Academic
+  - classcollider
   layers:
   - Default
   - TransparentFX
