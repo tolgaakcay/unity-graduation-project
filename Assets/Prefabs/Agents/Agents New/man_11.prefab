@@ -1713,7 +1713,7 @@ Transform:
   m_GameObject: {fileID: 5921909895146820134}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 161.59, y: 0.05, z: 114.73}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8}
   m_Children:
   - {fileID: 6573116942321716715}
   - {fileID: 9091587581895158032}
@@ -1804,6 +1804,8 @@ MonoBehaviour:
   finalcounter: {fileID: 0}
   textBox: {fileID: 0}
   distanceThreshold: 5
+  simManager: {fileID: 0}
+  isEvacuated: 0
 --- !u!195 &6840880411705165192
 NavMeshAgent:
   m_ObjectHideFlags: 0

@@ -157,13 +157,13 @@ GameObject:
   - component: {fileID: 424360208123750495}
   - component: {fileID: 5981780349149721125}
   - component: {fileID: 8894563519680984265}
-  - component: {fileID: 3095450874800273693}
   - component: {fileID: 1296272540732471816}
   - component: {fileID: 182209373494061993}
-  - component: {fileID: 5625788997363995001}
+  - component: {fileID: 173696592223665960}
+  - component: {fileID: 173696592223665961}
   m_Layer: 0
   m_Name: child2
-  m_TagString: Agent
+  m_TagString: Child
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -177,7 +177,7 @@ Transform:
   m_GameObject: {fileID: 1056219392464302821}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 138.46996, y: 14.002, z: 80.490944}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
   m_Children:
   - {fileID: 5438037629016287495}
   - {fileID: 3939416587442638538}
@@ -227,20 +227,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
---- !u!136 &3095450874800273693
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1056219392464302821}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &1296272540732471816
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -264,7 +250,7 @@ NavMeshAgent:
   m_Enabled: 1
   m_AgentTypeID: 0
   m_Radius: 0.5
-  m_Speed: 7
+  m_Speed: 8
   m_Acceleration: 8
   avoidancePriority: 50
   m_AngularSpeed: 120
@@ -276,7 +262,20 @@ NavMeshAgent:
   m_BaseOffset: 0
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &5625788997363995001
+--- !u!135 &173696592223665960
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1056219392464302821}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.871827
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &173696592223665961
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -285,7 +284,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1056219392464302821}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7586ca6184202b43a5f28e1023b7dd9, type: 3}
+  m_Script: {fileID: 11500000, guid: 64de8c3bb799f644ea3b2c63f4d4ada2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   startPosition: {x: 0, y: 0, z: 0}
@@ -297,13 +296,17 @@ MonoBehaviour:
   counter: 0
   total_distance_1: 0
   total_distance_2: 0
-  fileLocation: ./coord_time.csv
+  fileLocation: .\coord_time.csv
   total_agent: 
   anim: {fileID: 0}
   finalcounter: {fileID: 0}
   textBox: {fileID: 0}
-  distanceThreshold: 5
+  distanceThreshold: 4
   simManager: {fileID: 0}
+  lifesaver: 0
+  counterlifesaver: 0
+  savernear: 0
+  childdistance: 0
   isEvacuated: 0
 --- !u!1 &1149744577161188243
 GameObject:
