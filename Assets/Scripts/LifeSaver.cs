@@ -116,7 +116,7 @@ public class LifeSaver : MonoBehaviour
         
         if(pathFinished && counter3 == 0){
 
-            
+            Destroy(patrols[0].GetComponent<SpriteRenderer>());
             counter3++;
             // simManager.isSimStarted = true;
             random_destination_1 = new Vector3(UnityEngine.Random.Range(220.0f, 228.0f), 5, UnityEngine.Random.Range(112.0f, 125.0f));
