@@ -10,6 +10,17 @@ TagManager:
   - Agent
   - final
   - fire
+  - firefighter
+  - extinguisher
+  - SimulationManager
+  - SafeArea
+  - patrol
+  - test
+  - grabbed
+  - Child
+  - LifeSaver
+  - Academic
+  - classcollider
   layers:
   - Default
   - TransparentFX
@@ -20,11 +31,11 @@ TagManager:
   - 
   - 
   - PostProcessing
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Firefighter
+  - Extinguisher
+  - Fire
+  - Floor
+  - Minimap
   - 
   - 
   - 
