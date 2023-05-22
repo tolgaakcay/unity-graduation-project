@@ -37,7 +37,7 @@ public class NavigationManager : MonoBehaviour
     public void WriteSimulationData()    
     {
         StreamWriter sw = new StreamWriter(fileLocation, true);
-        string data = (startPosition.x * 1000).ToString("F0") + "," + (startPosition.z * 1000).ToString("F0") + "," + (startPosition.y * 1000).ToString("F0") + "," + Math.Round((endTime-startTime)).ToString();
+        string data = (startPosition.x).ToString("F0") + "," + (startPosition.z).ToString("F0") + ","; //+ "," + Math.Round((endTime-startTime)).ToString();
         sw.WriteLine(data);
         sw.Flush();
         sw.Close();       
@@ -79,7 +79,7 @@ public class NavigationManager : MonoBehaviour
                     finalcounter.text = ("Kalan aktor sayisi:"+gameObjects.Length.ToString()+"/"+total_agent);
                     endTime = Time.time;
                     CancelInvoke("WriteHeatMapSourceData");
-                    // WriteSimulationData();
+                    WriteSimulationData();
                 }
             }
         }
