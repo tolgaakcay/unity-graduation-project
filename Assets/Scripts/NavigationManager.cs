@@ -22,6 +22,7 @@ public class NavigationManager : MonoBehaviour
     public float total_distance_1 = 0.0f;
     public float total_distance_2 = 0.0f;
     public string fileLocation = @".\coord_time.csv";
+    public string heatmapDataPath = @"./heatmap_data.csv";
     public string total_agent;
     public Animator anim;
     private NavMeshAgent agent;
@@ -40,6 +41,15 @@ public class NavigationManager : MonoBehaviour
         sw.WriteLine(data);
         sw.Flush();
         sw.Close();       
+    }
+
+    public void WriteHeatMapSourceData()
+    {
+        StreamWriter sw = new StreamWriter(heatmapDataPath, true);
+        string data = (this.transform.position.x).ToString("F0") + "," + (this.transform.position.z).ToString("F0");
+        sw.WriteLine(data);
+        sw.Flush();
+        sw.Close();     
     }
 
     void Start()
@@ -68,7 +78,8 @@ public class NavigationManager : MonoBehaviour
                     gameObjects = GameObject.FindGameObjectsWithTag("Agent");
                     finalcounter.text = ("Kalan aktor sayisi:"+gameObjects.Length.ToString()+"/"+total_agent);
                     endTime = Time.time;
-                    WriteSimulationData();
+                    CancelInvoke("WriteHeatMapSourceData");
+                    // WriteSimulationData();
                 }
             }
         }
@@ -103,6 +114,7 @@ public class NavigationManager : MonoBehaviour
 
             agent.SetDestination(random_destination_final);
             startTime = Time.time;
+            InvokeRepeating("WriteHeatMapSourceData", 2, 0.3F);
         }
 
         if (agent.remainingDistance != 0 && agent.remainingDistance < 3 && isEvacuated)
