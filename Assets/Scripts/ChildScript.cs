@@ -64,7 +64,7 @@ public class ChildScript : MonoBehaviour
         if (transform.position[0] >= 114.0 & transform.position[0] <= 114.5 || transform.position[0] >= 217.0 & transform.position[0] <= 217.5)
         {
             
-            if (gameObject.tag == "Agent")
+            if (gameObject.tag == "Child" )
             {
                 {
                     transform.gameObject.tag = "final";
